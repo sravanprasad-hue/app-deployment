@@ -18,7 +18,7 @@ import Templates from "./components/dashboard/Templates/Templates";
 import TemplatesInner from "./components/dashboard/Templates/TemplatesInner";
 import Workspace from "./components/dashboard/Projects/Projects";
 import TrashView from "./components/dashboard/TrashView/TrashView";
-import Pricing from "./Pages/ Pricing";
+import Pricing from "./Pages/Pricing";
 import Createdesign from "./components/dashboard/Createdesign/Createdesign";
 import AdminLayout from "./components/layout/AdminLayout";
 import WebsiteLayout from "./components/layout/WebsiteLayout";

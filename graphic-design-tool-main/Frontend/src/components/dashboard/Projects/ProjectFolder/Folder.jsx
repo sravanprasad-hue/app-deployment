@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { Star, ChevronDown, LayoutGrid, Folder as FolderIcon, Plus, Grid, List, X, Search } from "lucide-react";
 import DashboardSidebar from "../../DashboardLayout/DashboardSidebar.jsx";
-import "./Folder.css";
+import "./folder.css";
 import { useNavigate } from "react-router-dom";
 import frame1 from "../../../../assets/Frames/frame1.png";
 import frame2 from "../../../../assets/Frames/frame2.png";

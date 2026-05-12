@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar"
 import Phone from "../../../../assets/AccountCentre/Phone.svg"
-import people from "../../../../assets/AccountCentre/idpeople.svg"
+import people from "../../../../assets/AccountCentre/idPeople.svg"
 import Email from "../../../../assets/AccountCentre/Email.svg"
 import OTP from "../../../../assets/AccountCentre/otp.svg"
 import darkOTP from "../../../../assets/AccountCentre/darkotp.svg"
