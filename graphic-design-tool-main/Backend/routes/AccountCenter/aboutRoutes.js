@@ -9,7 +9,7 @@ const {
   getAcceptableUse,
   getThirdParty,
   openWebsite
-} = require("../../controllers/accountCenter/aboutController");
+} = require("../../controllers/AccountCenter/aboutController");
  
 // About
 router.get("/", getAbout);

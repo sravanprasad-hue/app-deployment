@@ -247,9 +247,21 @@ const [updatedRows] = await db.execute(
 const updatedUser = updatedRows[0];
 
 const token = jwt.sign(
-  { id: user.id },
-  process.env.JWT_SECRET || "secretkey",
-  { expiresIn: "1d" }
+
+  {
+    id: user.id,
+
+    role: user.role,
+
+    email: user.email
+  },
+
+  process.env.JWT_SECRET,
+
+  {
+    expiresIn: "1d"
+  }
+
 );
 
 res.json({
