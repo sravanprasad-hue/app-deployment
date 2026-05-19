@@ -3,15 +3,12 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
-    steps {
-        git branch: 'main', url: 'https://github.com/sravanprasad-hue/app-deployment.git'
-    }
-}:wq
         stage('Build Docker Containers') {
             steps {
-                sh 'docker-compose down'
-                sh 'docker-compose up -d --build'
+                dir('graphic-design-tool-main') {
+                    sh 'docker-compose down'
+                    sh 'docker-compose up -d --build'
+                }
             }
         }
 
