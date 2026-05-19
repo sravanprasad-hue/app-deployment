@@ -4,11 +4,10 @@ pipeline {
     stages {
 
         stage('Clone Repository') {
-            steps {
-                git 'https://github.com/sravanprasad-hue/app-deployment.git'
-            }
-        }
-
+    steps {
+        git branch: 'main', url: 'https://github.com/sravanprasad-hue/app-deployment.git'
+    }
+}:wq
         stage('Build Docker Containers') {
             steps {
                 sh 'docker-compose down'
