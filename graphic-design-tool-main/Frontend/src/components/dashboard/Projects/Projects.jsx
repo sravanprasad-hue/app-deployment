@@ -56,7 +56,7 @@ const Workspace = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await axios.get("http://localhost:5050/api/projects", {
+      const res = await axios.get("/api/projects", {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -99,7 +99,7 @@ const Workspace = () => {
 
       await Promise.all(
         selectedIds.map(id =>
-          axios.delete(`http://localhost:5050/api/projects/${id}`, {
+          axios.delete(`/api/projects/${id}`, {
             headers: { Authorization: `Bearer ${token}` }
           })
         )

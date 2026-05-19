@@ -45,7 +45,7 @@ const [lockRatio, setLockRatio] = useState(false);
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:5050/api/designs/folders",
+        "/api/designs/folders",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -70,7 +70,7 @@ const createFolder = async () => {
     const token = localStorage.getItem("token");
 
     const res = await axios.post(
-      "http://localhost:5050/api/designs/folders",
+      "/api/designs/folders",
       { name: folderName },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -105,7 +105,7 @@ const createFolder = async () => {
     const token = localStorage.getItem("token");
 
     const res = await axios.post(
-      "http://localhost:5050/api/designs",
+      "/api/designs",
       {
         name: projectName,
         width: Number(width),

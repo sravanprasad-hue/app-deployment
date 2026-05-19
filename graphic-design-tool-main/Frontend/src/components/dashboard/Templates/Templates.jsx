@@ -56,7 +56,7 @@ function Templates() {
       setLoading(true);
       try {
         const res = await axios.get(
-          "http://localhost:5050/api/templates",
+          "/api/templates",
         );
         setTemplates(res.data.data);
         console.log(res.data.data)
@@ -77,7 +77,7 @@ function Templates() {
   // }, []);
  
   // useEffect(() => {
-  //   axios.get("http://localhost:5050/api/templates").then((res)=>{
+  //   axios.get("/api/templates").then((res)=>{
   //     setTemplates(res.data);
   //     console.log(res.data);
  
@@ -90,7 +90,7 @@ function Templates() {
  
   // const fetchTemplates = async () => {
   //   try {
-  //     const res = await axios.get("http://localhost:5050/api/templates");
+  //     const res = await axios.get("/api/templates");
  
   //     console.log("API RESPONSE:", res.data); // 👈 ADD THIS
  
@@ -107,7 +107,7 @@ function Templates() {
       if (!query) return fetchTemplates();
  
       const res = await axios.get(
-        `http://localhost:5050/api/templates/search?search=${query}`
+        `/api/templates/search?search=${query}`
       );
  
       setTemplates(res.data.data || res.data);
@@ -128,7 +128,7 @@ function Templates() {
  
       const res = await axios.get(
  
-        `http://localhost:5050/api/templates/filter?category=${category}`
+        `/api/templates/filter?category=${category}`
  
       );
  

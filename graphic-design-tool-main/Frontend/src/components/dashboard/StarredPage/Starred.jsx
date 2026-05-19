@@ -74,7 +74,7 @@ function Starred({
   //   const fetchStarred = async () => {
   //     try {
   //       const res = await axios.get(
-  //         `http://localhost:5050/api/starred/${userId}`,
+  //         `/api/starred/${userId}`,
   //       );
 
   //       const data = res.data;

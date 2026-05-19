@@ -1,0 +1,48 @@
+version: '3.9'
+
+services:
+
+  mysql:
+    image: mysql:8
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: graphicdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  backend:
+    build: ./Backend
+    container_name: backend
+    restart: always
+    ports:
+      - "5050:5050"
+    env_file:
+      - ./Backend/.env
+    depends_on:
+      - mysql
+
+  frontend:
+    build: ./Frontend
+    container_name: frontend
+    restart: always
+    depends_on:
+      - backend
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - frontend
+      - backend
+
+volumes:
+  mysql-data:

@@ -25,7 +25,7 @@ export default function AboutApp() {
   const [loading, setLoading] = useState(true);
  
   useEffect(() => {
-    axios.get("http://localhost:5050/api/about")
+    axios.get("/api/about")
       .then((res) => {
         if (res?.data) {
  
@@ -56,7 +56,7 @@ export default function AboutApp() {
  
   // CHANGED: New function for opening legal pages
   const openLegalPage = (url) => {
-    window.open(`http://localhost:5050${url}`, '_blank');
+   window.open(`${url}`, '_blank');
   };
  
   // CHANGED: Added loading UI
@@ -127,7 +127,7 @@ export default function AboutApp() {
   Website:{" "}
   <span className="section-span">
   <a
-  href="http://localhost:5050/api/about/website"
+  href="/api/about/website"
   target="_blank"
   rel="noopener noreferrer"
 >

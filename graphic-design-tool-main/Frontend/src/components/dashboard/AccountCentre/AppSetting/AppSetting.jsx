@@ -17,7 +17,7 @@ const [language, setLanguage] = useState("en");
   const fetchSettings = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5050/api/appsetting",
+        "/api/appsetting",
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -59,7 +59,7 @@ const updateSettings = async (updatedData) => {
  
  
     await axios.put(
-      "http://localhost:5050/api/appsetting",
+      "/api/appsetting",
       payload,
       {
         headers: {
