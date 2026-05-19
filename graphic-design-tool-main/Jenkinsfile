@@ -3,6 +3,22 @@ pipeline {
 
     stages {
 
+        stage('Create Environment File') {
+            steps {
+                dir('graphic-design-tool-main') {
+                    sh '''
+                    cat > Backend/.env <<EOF
+DB_HOST=mysql
+DB_USER=root
+DB_PASSWORD=root123
+DB_NAME=graphicdb
+PORT=5050
+EOF
+                    '''
+                }
+            }
+        }
+
         stage('Build Docker Containers') {
             steps {
                 dir('graphic-design-tool-main') {
