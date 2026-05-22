@@ -1,5 +1,6 @@
-services:
+version: '3.9'
 
+services:
   mysql:
     image: mysql:8
     container_name: mysql
@@ -27,19 +28,22 @@ services:
     build: ./Frontend
     container_name: frontend
     restart: always
-    depends_on:
-      - backend
     ports:
       - "5173:5173"
+    depends_on:
+      - backend
 
   nginx:
-  build:
-    context: .
-    dockerfile: Dockerfile.nginx
-  container_name: nginx
-  restart: always
-  ports:
-    - "80:80"
-  depends_on:
-    - frontend
-    - backend
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend
+
+volumes:
+  mysql-data:
