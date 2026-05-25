@@ -22,8 +22,8 @@ EOF
         stage('Build Docker Containers') {
             steps {
                 dir('graphic-design-tool-main') {
-                    sh 'docker compose down'
-                    sh 'docker compose up -d --build'
+                    sh 'docker-compose down'
+                    sh 'docker-compose up -d --build'
                 }
             }
         }
